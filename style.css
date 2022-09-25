@@ -1,29 +1,38 @@
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
-
+ 
   }
   .grid{
     display: flex;
-    flex-wrap: wrap;
+    
     justify-content: center;
+    
     
   }
 
   #container {
-   
+    
     display: grid;
+    overflow: hidden;
+   
     border: 12px solid #ddd;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
 
     grid-template-columns: repeat(var(--grid-cols), 1fr);
+
+    height: 408px;
+    width: 408px;
+
+    /* position: relative; */
    
   }
   
   .grid-item {
-    
-    padding: 1em;
-    border: 1px solid #ddd;
+    display: flex;
+    /* position: absolute; */
+    padding: 0.5px;
+    border: 0.2px solid #ddd;
     /* text-align: center; */
   }
 
@@ -50,3 +59,45 @@
     width: auto;
     height: 20px;
   }
+
+
+ /* slider  */
+
+  .slidecontainer {
+  width: 100%;
+ 
+}
+.slidecontainer p {
+  display: inline;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}

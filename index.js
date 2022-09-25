@@ -1,34 +1,71 @@
-const container = document.getElementById("container");
+document.querySelector('input').addEventListener('input', e => document.getElementById('size1').innerText = e.target.value );
 
+document.querySelector('input').addEventListener('input', e => document.getElementById('size2').innerText = e.target.value );
+
+
+
+
+const container = document.getElementById("container");
 function makeRows(row, col) {
+  
   container.style.setProperty('--grid-rows', row);
   container.style.setProperty('--grid-cols', col);
-  for (i = 0; i < (row * col); i++) {
+  
+  for (i = 0; i < (row * col ); i++) {
     let cell = document.createElement("div");
-   //  cell.innerText = (i + 1);
+    // cell.innerText = (i + 1);
     container.appendChild(cell).className = "grid-item";
   };
 };
 
-makeRows(12, 12);
 
-
-
-
-   let mousePressedDown = false;  
+// click and move mouse on grid to color each grid tile
+function mouseEvent(){
+  let mousePressedDown = false;  
  
-   $(document).mousedown(function() {
-     mousePressedDown = true;      
-   })
-   .mouseup(function() {
-     mousePressedDown = false;    
-   });
+$(document).mousedown(function() {
+  mousePressedDown = true;      
+})
+.mouseup(function() {
+  mousePressedDown = false;    
+});
+
+$(".grid-item").mouseover(function(){
+  if(mousePressedDown) {       
+     $(this).css({background:"black"});
+  }
+});
+
+}
+
+
+// let row =  document.getElementById("row").value
+// let col = document.getElementById("col").value
+
+let row = 12
+let col =   12
+
+makeRows(row, col);
+
+
+
+function getSize(){
+  
+  let row =   document.getElementById('size1').innerText
+  let col =   document.getElementById('size2').innerText
  
-   $(".grid-item").mouseover(function(){
-     if(mousePressedDown) {       
-        $(this).css({background:"black"});
-     }
-   });
+  $("div").remove(".grid-item");
+  makeRows(parseInt(row), parseInt(col) );
+
+  mouseEvent()
+
+}
 
 
-   
+
+
+mouseEvent();
+
+
+ 
+ 

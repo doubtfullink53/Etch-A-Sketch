@@ -11,22 +11,26 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h1 class="title">Etch-A-Sketch</h1>
     <div class="grid">
      <div class="container" id="container"></div>
     </div>
 
         
-        <div class="input">
-            <p class="x-text">row</p>
-            <input type="text" id="row" >
-            <p class="x-text">x</p>
-            <input type="text" id="col" >
-            <p class="x-text">columns</p>
-            
+    
+          
+
+            <div class="slidecontainer">
+                <p id="size1">12</p>
+                <p>X</p>
+                <p id="size2">12</p>
+                <input type="range" value="12" min="1" max="64" step="1" id="slider"   onchange="getSize()"/>
+                
+                
+            </div>    
         </div>
-        <div class="submit">
-            <button>Submit</button>
-        </div>
+        
     <script src="index.js"></script>
 </body>
 </html>
