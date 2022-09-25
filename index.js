@@ -38,9 +38,24 @@ $(".grid-item").mouseover(function(){
 
 }
 
+// touchdown event move over grid color
 
-// let row =  document.getElementById("row").value
-// let col = document.getElementById("col").value
+document.addEventListener('touchmove', function(e) {
+    // e.preventDefault();
+    var touch = e.touches[0];
+   
+
+          
+    $(".grid-item").on("mouseover", function(){
+      if(touch.target.className === "grid-item" ) {  
+        console.log(touch.target.className )     
+        $("this").css({background:"black"});
+     }
+    })
+   
+}, false);
+
+
 
 let row = 12
 let col =   12
@@ -57,7 +72,7 @@ function getSize(){
   $("div").remove(".grid-item");
   makeRows(parseInt(row), parseInt(col) );
 
-  mouseEvent()
+   mouseEvent()
 
 }
 
