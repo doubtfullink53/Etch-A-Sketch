@@ -32,7 +32,7 @@
     display: flex;
     /* position: absolute; */
     padding: 0.5px;
-    border: 0.2px solid #ddd;
+    border: 0px solid #ddd;
     /* text-align: center; */
   }
 
@@ -61,7 +61,7 @@
   }
 
 
- /* slider  */
+ /* slider to change pixel size  */
 
   .slidecontainer {
   width: 100%;
