@@ -6,6 +6,8 @@ document.querySelector('input').addEventListener('input', e => document.getEleme
 
 
 const container = document.getElementById("container");
+
+// make div grids 
 function makeRows(row, col) {
   
   container.style.setProperty('--grid-rows', row);
@@ -19,9 +21,22 @@ function makeRows(row, col) {
 };
 
 
+function colorPicker(){
+  
+}
+
+
 // click and move mouse on grid to color each grid tile
 function mouseEvent(){
-  let mousePressedDown = false;  
+
+  const colorPicker = document.querySelector('#input-color');
+
+  let color = colorPicker.value;
+
+  colorPicker.addEventListener('change', function() {
+    color = colorPicker.value
+  });
+   let mousePressedDown;
  
 $(document).mousedown(function() {
   mousePressedDown = true;      
@@ -32,38 +47,22 @@ $(document).mousedown(function() {
 
 $(".grid-item").mouseover(function(){
   if(mousePressedDown) {       
-     $(this).css({background:"black"});
+     $(this).css({background: color});
   }
 });
 
 }
 
-// touchdown event move over grid color
-
-document.addEventListener('touchmove', function(e) {
-    // e.preventDefault();
-    var touch = e.touches[0];
-   
-
-          
-    $(".grid-item").on("mouseover", function(){
-      if(touch.target.className === "grid-item" ) {  
-        console.log(touch.target.className )     
-        $("this").css({background:"black"});
-     }
-    })
-   
-}, false);
 
 
 
 let row = 12
-let col =   12
+let col = 12
 
 makeRows(row, col);
 
 
-
+// change pixel size , remake grid 
 function getSize(){
   
   let row =   document.getElementById('size1').innerText
@@ -73,14 +72,11 @@ function getSize(){
   makeRows(parseInt(row), parseInt(col) );
 
    mouseEvent()
-
+   
 }
-
-
-
 
 mouseEvent();
 
 
- 
- 
+
+

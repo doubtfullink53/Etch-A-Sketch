@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="bttn.min.css">
+  
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touch/1.1.0/jquery.touch.min.js" ></script>
    
@@ -16,13 +19,22 @@
     <h1 class="title">Etch-A-Sketch</h1>
     <div class="grid">
         <div class="slidecontainer">
-            <p id="size1">12</p>
-            <p>X</p>
-            <p id="size2">12</p>
-            <input type="range" value="12" min="1" max="64" step="1" id="slider"   onchange="getSize()"/>
-            
-            
+            <div>
+                <p id="size1">12</p>
+                <p>X</p>
+                <p id="size2">12</p>
+                <input type="range" value="12" min="1" max="64" step="1" id="slider"   onchange="getSize()"/>
+            </div>
+
+            <div class="rainbow-switch">
+                
+                <input id="input-color" type='color' value="#000000" onclick="mouseEvent"/>
+                <label for="body"></label>
+            </div>
+           
         </div>    
+       
+        
      <div class="container" id="container"></div>
     </div>
 
